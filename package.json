@@ -1,0 +1,24 @@
+{
+  "name": "SalesStore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vinicius Perrone <perronevinicius2018@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --inpect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.39",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.0.0",
+    "typescript": "^4.7.2"
+  }
+}
