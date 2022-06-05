@@ -1,6 +1,8 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
 import cors from 'cors';
+import { errors } from 'celebrate';
 import dotenv from 'dotenv';
 import AppError from '@shared/errors/AppError';
 import { dataSource } from '@shared/typeorm';
@@ -14,6 +16,7 @@ dataSource.initialize().then(() => {
   app.use(cors());
   app.use(express.json());
   app.use(router);
+  app.use(errors());
 
   app.use(
     (
