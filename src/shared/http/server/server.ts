@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import AppError from '@shared/errors/AppError';
 import { dataSource } from '@shared/typeorm';
 import router from '../routes';
+import uploadConfig from '@config/upload';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ dataSource.initialize().then(() => {
 
   app.use(cors());
   app.use(express.json());
+  app.use('/files', express.static(uploadConfig.directory));
   app.use(router);
   app.use(errors());
 
