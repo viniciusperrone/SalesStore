@@ -7,7 +7,7 @@ import {
   DeleteProductService,
 } from '../services';
 
-class ProductController {
+class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listProducts = new ListProductsService();
 
@@ -63,4 +63,4 @@ class ProductController {
   }
 }
 
-export { ProductController };
+export { ProductsController };

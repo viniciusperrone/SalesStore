@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { celebrate, Joi, Segments } from 'celebrate';
-import { ProductController } from '../controllers/ProductController';
+import { ProductsController } from '../controllers/ProductsController';
 
 const productsRouter = Router();
-const productController = new ProductController();
+const productsController = new ProductsController();
 
-productsRouter.get('/', productController.index);
+productsRouter.get('/', productsController.index);
 
 productsRouter.get(
   '/:uuid',
@@ -14,7 +14,7 @@ productsRouter.get(
       uuid: Joi.string().uuid().required(),
     },
   }),
-  productController.show,
+  productsController.show,
 );
 
 productsRouter.post(
@@ -26,7 +26,7 @@ productsRouter.post(
       quantity: Joi.number().required(),
     },
   }),
-  productController.create,
+  productsController.create,
 );
 
 productsRouter.patch(
@@ -41,7 +41,7 @@ productsRouter.patch(
       uuid: Joi.string().uuid().required(),
     },
   }),
-  productController.update,
+  productsController.update,
 );
 
 productsRouter.delete(
@@ -51,7 +51,7 @@ productsRouter.delete(
       uuid: Joi.string().uuid().required(),
     },
   }),
-  productController.delete,
+  productsController.delete,
 );
 
 export default productsRouter;

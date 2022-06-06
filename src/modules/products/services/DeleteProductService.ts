@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import { ProductRepository } from '../typeorm/repositories/ProductRepository';
+import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   uuid: string;
@@ -7,7 +7,7 @@ interface IRequest {
 
 class DeleteProductService {
   public async execute({ uuid }: IRequest): Promise<void> {
-    const productRepository = ProductRepository;
+    const productRepository = ProductsRepository;
 
     const product = await productRepository.findOne({ where: { uuid } });
 
