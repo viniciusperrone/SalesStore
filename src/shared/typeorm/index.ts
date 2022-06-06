@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { CreateProducts, CreateUsers, CreateUserTokens } from './migrations';
 import Product from '@modules/products/typeorm/entities/Product';
 import User from '@modules/users/typeorm/entities/User';
+import UserToken from '@modules/users/typeorm/entities/UserToken';
 
 dotenv.config();
 
@@ -14,6 +15,6 @@ export const dataSource = new DataSource({
   username: process.env.TYPEORM_USERNAME,
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
-  entities: [Product, User],
+  entities: [Product, User, UserToken],
   migrations: [CreateProducts, CreateUsers, CreateUserTokens],
 });
