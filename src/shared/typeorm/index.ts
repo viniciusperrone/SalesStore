@@ -6,6 +6,11 @@ import {
   CreateUsers,
   CreateUserTokens,
   CreateCustomers,
+  CreateOrders,
+  AddCustomerIdToOrders,
+  CreateOrdersProducts,
+  AddOrderIdToOrdersProducts,
+  AddProductsIdToOrdersProducts,
 } from './migrations';
 import Product from '@modules/products/typeorm/entities/Product';
 import User from '@modules/users/typeorm/entities/User';
@@ -22,5 +27,15 @@ export const dataSource = new DataSource({
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   entities: [Product, User, UserToken, Customer],
-  migrations: [CreateProducts, CreateUsers, CreateUserTokens, CreateCustomers],
+  migrations: [
+    CreateProducts,
+    CreateUsers,
+    CreateUserTokens,
+    CreateCustomers,
+    CreateOrders,
+    AddCustomerIdToOrders,
+    CreateOrdersProducts,
+    AddOrderIdToOrdersProducts,
+    AddProductsIdToOrdersProducts,
+  ],
 });
