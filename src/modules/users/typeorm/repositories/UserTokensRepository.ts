@@ -1,7 +1,7 @@
 import { dataSource } from '@shared/typeorm';
 import UserToken from '../entities/UserToken';
 
-export const UserTokensRepository = dataSource.getRepository(UserToken).extend({
+const UserTokensRepository = dataSource.getRepository(UserToken).extend({
   async findByToken(token: string): Promise<UserToken | null> {
     const userToken = this.findOne({
       where: {
@@ -21,3 +21,5 @@ export const UserTokensRepository = dataSource.getRepository(UserToken).extend({
     return userToken;
   },
 });
+
+export { UserTokensRepository };
