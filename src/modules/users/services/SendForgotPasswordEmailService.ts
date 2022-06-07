@@ -22,7 +22,7 @@ class SendForgotPasswordEmailService {
 
     await EtherealMail.sendMail({
       to: email,
-      body: `Password reset request received! ${token}`,
+      body: `Password reset request received! ${token?.token}`,
     });
   }
 }
