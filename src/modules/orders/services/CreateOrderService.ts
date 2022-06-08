@@ -83,4 +83,4 @@ class CreateOrderService {
   }
 }
 
-export default CreateOrderService;
+export { CreateOrderService };

@@ -20,4 +20,4 @@ class ShowOrderService {
   }
 }
 
-export default ShowOrderService;
+export { ShowOrderService };
