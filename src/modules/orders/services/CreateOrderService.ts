@@ -50,7 +50,7 @@ class CreateOrderService {
         product.quantity,
     );
 
-    if (quantityAvailable) {
+    if (quantityAvailable.length) {
       throw new AppError(
         `The quantity ${checkInexistentProducts[0].quantity} 
         is not available for ${checkInexistentProducts[0].uuid}.`,
@@ -73,7 +73,7 @@ class CreateOrderService {
     const updatedProductQuantity = order_products.map(product => ({
       uuid: product.product_id,
       quantity:
-        existsProducts.filter(p => p.uuid === product.uuid)[0].quantity -
+        existsProducts.filter(p => p.uuid === product.product_id)[0].quantity -
         product.quantity,
     }));
 
