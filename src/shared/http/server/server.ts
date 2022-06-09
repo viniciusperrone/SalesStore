@@ -9,6 +9,7 @@ import AppError from '@shared/errors/AppError';
 import { dataSource } from '@shared/typeorm';
 import router from '../routes';
 import uploadConfig from '@config/upload';
+import rateLimit from '../middlewares/rateLimit';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ dataSource.initialize().then(() => {
 
   app.use(cors());
   app.use(express.json());
+
+  app.use(rateLimit);
 
   app.use(pagination);
 
