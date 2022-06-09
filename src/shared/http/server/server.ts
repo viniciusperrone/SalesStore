@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import { errors } from 'celebrate';
+import { pagination } from 'typeorm-pagination';
 import dotenv from 'dotenv';
 import AppError from '@shared/errors/AppError';
 import { dataSource } from '@shared/typeorm';
@@ -16,6 +17,9 @@ dataSource.initialize().then(() => {
 
   app.use(cors());
   app.use(express.json());
+
+  app.use(pagination);
+
   app.use('/files', express.static(uploadConfig.directory));
   app.use(router);
   app.use(errors());

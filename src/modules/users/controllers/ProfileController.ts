@@ -1,4 +1,4 @@
-import { UpdateProductService } from '@modules/products/services';
+import { instanceToInstance } from 'class-transformer';
 import { Request, Response } from 'express';
 import ShowProfileService from '../services/ShowProfileService';
 import UpdateProfileService from '../services/UpdateProfileService';
@@ -11,7 +11,7 @@ class ProfileController {
 
     const user = await showProfileService.execute({ user_id });
 
-    return response.json(user);
+    return response.json(instanceToInstance(user));
   }
   public async update(request: Request, response: Response): Promise<Response> {
     const user_id = request.user.uuid;
@@ -24,7 +24,7 @@ class ProfileController {
       ...request.body,
     });
 
-    return response.json(user);
+    return response.json(instanceToInstance(user));
   }
 }
 
