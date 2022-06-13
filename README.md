@@ -56,9 +56,10 @@ $ yarn dev
 ```
 ## Built With
 - The application's backend was developed using the following technologies:
+- 
   - [Node.js](https://nodejs.org/en/)
   - [Express](https://expressjs.com/pt-br/)
   - [Postgres](https://www.mysql.com/)
-  - [TypeORM](https://www.mongodb.com/)
+  - [TypeORM](https://typeorm.io/)
   - [Redis](https://redis.io/)
-  - [Docker](https://reactnative.dev/)
+  - [Docker](https://www.docker.com/)
