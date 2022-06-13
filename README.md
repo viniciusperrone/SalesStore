@@ -2,13 +2,11 @@
 
 ## Table of Contents
 * [About the Project](#about-the-project)
-  * [Justification](#justification)
-  * [Features](#features)
 * [How to download?](#how-to-download)
 * [How to install?](#how-to-install)
 * [Built With](#built-with)
 
-### Features
+### About the Product
 - Inventory with all the food the user has in the kitchen, divided into several categories.
 - Registration of food manually according to several attributes (optional) - quantity, brand, validity, etc.
 - Consultation of recipes.
@@ -21,7 +19,7 @@
 - To download the project, execute the command:
 ```bash
 // Clone the application repository
-$ git clone https://github.com/viniciusperrone/FoodFast.git
+$ git clone https://github.com/viniciusperrone/SalesStore.git
 ```
 
 ## How to install?
