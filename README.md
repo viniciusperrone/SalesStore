@@ -6,7 +6,7 @@
 * [How to install?](#how-to-install)
 * [Built With](#built-with)
 
-### About the Product
+### About the Project
 - Inventory with all the food the user has in the kitchen, divided into several categories.
 - Registration of food manually according to several attributes (optional) - quantity, brand, validity, etc.
 - Consultation of recipes.
